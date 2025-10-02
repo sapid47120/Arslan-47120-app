@@ -19,11 +19,11 @@ It displays my **name** and **SAP ID** when accessed in a web browser.
    cd Arslan-47120-app
 
 2 Install dependencies:
-npm install
+  npm install
 
-Start the app:
+3  Start the app:
 
-npm start
+   npm start
 
 
 Open in browser:
