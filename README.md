@@ -11,32 +11,79 @@ It displays my **name** and **SAP ID** when accessed in a web browser.
 
 ---
 
-## 🚀 How to Run Locally
+## 📝 Steps of the Activity
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/sapid47120/Arslan-47120-app.git
-   cd Arslan-47120-app
+### Step 1: Create Project Folder
+- Created a folder named **Arslan-47120-app**.
+- This folder contains all project files.
 
-2 Install dependencies:
-  npm install
+---
 
-3  Start the app:
+### Step 2: Create a Simple Web App
+- Added `app.js` with a small Express server.  
+- Code inside `app.js`:  
+    const express = require('express');
+    const app = express();
+    const PORT = 3000;
 
-   npm start
+    app.get('/', (req, res) => {
+      res.send('My name is Arslan Tahir and my SAP is 47120');
+    });
 
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT}`);
+    });
 
-Open in browser:
-http://localhost:3000
+---
 
-🐳 How to Run with Docker
+### Step 3: Create Dockerfile
+- Added a `Dockerfile` to containerize the app.  
+- Dockerfile content:  
+    FROM node:18-alpine
 
-Build the Docker image:
+    WORKDIR /usr/src/app
 
- 1 docker build -t arslan-47120-app .
-    Run the container:
+    COPY package*.json ./
+    RUN npm install
 
-2  docker run -p 3000:3000 arslan-47120-app
+    COPY . .
 
-3  Open in browser:
- http://localhost:3000
+    EXPOSE 3000
+
+    CMD ["npm", "start"]
+
+---
+
+### Step 4: Build and Run the App
+
+#### 🔹 Run Locally
+1. Install dependencies:  
+    npm install
+2. Start the app:  
+    npm start
+3. Open in browser:  
+    http://localhost:3000  
+
+Output:  
+    My name is Arslan Tahir and my SAP is 47120
+
+#### 🔹 Run with Docker
+1. Build the Docker image:  
+    docker build -t arslan-47120-app .
+2. Run the container:  
+    docker run -p 3000:3000 arslan-47120-app
+3. Open in browser:  
+    http://localhost:3000  
+
+Output:  
+    My name is Arslan Tahir and my SAP is 47120
+
+---
+
+## 📂 Project Structure
+Arslan-47120-app/  
+│── app.js            # Main Express app (prints name + SAP)  
+│── package.json      # Node.js dependencies & start script  
+│── Dockerfile        # Docker configuration  
+│── .dockerignore     # Files to ignore when building Docker image  
+│── README.md         # Project documentation (this file)  
