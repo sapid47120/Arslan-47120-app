@@ -22,6 +22,7 @@ It displays my **name** and **SAP ID** when accessed in a web browser.
 ### Step 2: Create a Simple Web App
 - Added `app.js` with a small Express server.  
 - Code inside `app.js`:  
+
     const express = require('express');
     const app = express();
     const PORT = 3000;
@@ -39,6 +40,7 @@ It displays my **name** and **SAP ID** when accessed in a web browser.
 ### Step 3: Create Dockerfile
 - Added a `Dockerfile` to containerize the app.  
 - Dockerfile content:  
+
     FROM node:18-alpine
 
     WORKDIR /usr/src/app
@@ -77,6 +79,19 @@ Output:
 
 Output:  
     My name is Arslan Tahir and my SAP is 47120
+
+---
+
+### Step 5: Push Code to GitHub
+1. Initialize Git:  
+    git init  
+    git add .  
+    git commit -m "Initial commit - Arslan Tahir 47120 app"
+
+2. Connect to GitHub:  
+    git branch -M main  
+    git remote add origin https://github.com/sapid47120/Arslan-47120-app.git  
+    git push -u origin main
 
 ---
 
