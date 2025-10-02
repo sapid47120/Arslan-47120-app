@@ -1,0 +1,17 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+
+# Logs
+*.log
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Git
+.git
+.gitignore
+
+# OS files
+.DS_Store
